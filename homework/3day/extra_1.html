@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="extra_1.css">
+    <title>Day 3. extra_1</title>
+</head>
+<body>
+    <h4>가로 도트 공예</h4>
+    <div class="painter">
+        <div class="painter__board" id="painter__board">
+            
+        </div>
+        <div class="painter__navi">
+            <button onClick="example(1)">
+                <div class="blue"></div>
+                <span>파란색</span>
+            </button>
+            <button onClick="example(2)">
+                <div class="pink"></div>
+                <span>분홍색</span>
+            </button>
+            <button onClick="example(3)">
+                줄바꿈
+            </button>
+            <button onClick="example(0)">
+                공백
+            </button>
+            <button onClick="example(4)">
+                뒤로가기
+            </button>
+        </div>
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        function example(index) {
+            if (index ===0 ){
+                var brDiv = document.createElement('div');
+                brDiv.className = 'my-class5';
+                document.getElementById('painter__board').appendChild(brDiv);
+            } else if (index === 1) {
+                var outerDiv = document.createElement('div');
+                    outerDiv.className='my-class1';
+                for(let i=1;i<5;i++){
+                    var innerDiv = document.createElement('div');
+                    innerDiv.className = 'my-class';
+                    outerDiv.appendChild(innerDiv);
+                }
+                document.getElementById('painter__board').appendChild(outerDiv);
+            } else if (index === 2) {
+                var outerDiv = document.createElement('div');
+                    outerDiv.className='my-class1';
+                for(let i=1;i<5;i++){
+                    var innerDiv = document.createElement('div');
+                    innerDiv.className = 'my-class2';
+                    outerDiv.appendChild(innerDiv);
+                }
+                document.getElementById('painter__board').appendChild(outerDiv);
+            } else if (index ===3){
+                var brDiv = document.createElement('div');
+                brDiv.className = 'my-class4';
+                document.getElementById('painter__board').appendChild(brDiv);
+            } else if (index ===4){
+                var divs = document.getElementById('painter__board').querySelectorAll('div');
+                var lastDiv = divs[divs.length - 1];
+                lastDiv.remove();
+            }
+        }
+
+    </script>
+</body>
+</html>
