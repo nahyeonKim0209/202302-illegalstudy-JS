@@ -48,3 +48,6 @@ async function 함수명(){
 //async : function 앞에 위치. 해당 함수는 항상 프로미스 반환
 //await : async 함수 안에서만 동작. await 키워드를 만날 시 프로미스 처리를 기다리고 결과는 그 이후 반환
 ```
+
+### 추가 3번) function를 사용해서 120줄 이상 코드 작성
+* 어떤 function는 리턴값 주고, callback이 들어가야 함. 재귀도 들어가야 함. 화살표 함수도 넣어보자.
